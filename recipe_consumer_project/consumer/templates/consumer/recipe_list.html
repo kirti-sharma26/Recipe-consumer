@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe List</title>
+</head>
+<body>
+    <h1>Recipes</h1>
+    <ul>
+        {% for recipe in recipes_data %}
+        <li>
+            <strong>Name:</strong> {{ recipe.Title }} <br>
+            <strong>Description:</strong> {{ recipe.description }} <br>
+            <strong>Ingredients:</strong>
+            <ul>
+                {% for ingredient in recipe.ingredients %}
+                <li>{{ ingredient }}</li>
+                {% endfor %}
+            </ul>
+            <hr>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
